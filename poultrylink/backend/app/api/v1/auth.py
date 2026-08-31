@@ -6,7 +6,7 @@ from app.models.shared import User, RoleEnum
 from app.schemas.auth import UserCreate, UserLogin, TokenResponse, UserResponse
 from datetime import timedelta
 from app.core.config import settings
-from uuid import UUID
+from uuid import UUID, uuid4
 
 router = APIRouter(prefix="/auth", tags=["auth"])
 

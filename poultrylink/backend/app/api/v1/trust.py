@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlmodel import Session, select
 from app.core.database import get_session
 from app.models.shared import User
-from uuid import UUID
+from uuid import UUID, uuid4
 
 router = APIRouter(prefix="/trust", tags=["trust"])
 

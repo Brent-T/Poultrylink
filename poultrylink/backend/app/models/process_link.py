@@ -1,5 +1,5 @@
 from sqlmodel import SQLModel, Field
-from uuid import UUID
+from uuid import UUID, uuid4
 
 
 class ProcessorBooking(SQLModel, table=True):

@@ -1,6 +1,6 @@
 from pydantic import BaseModel, EmailStr
 from typing import Optional
-from uuid import UUID
+from uuid import UUID, uuid4
 from app.models.shared import RoleEnum
 
 

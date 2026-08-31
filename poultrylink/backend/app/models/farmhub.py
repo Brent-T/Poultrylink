@@ -1,7 +1,6 @@
 from sqlmodel import SQLModel, Field
 from typing import Optional
-from uuid import UUID
-
+from uuid import UUID, uuid4
 
 class FeedRecord(SQLModel, table=True):
     __tablename__ = "feed_records"

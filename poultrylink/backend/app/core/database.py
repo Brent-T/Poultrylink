@@ -1,4 +1,4 @@
-from sqlmodel import SQLModel, create_engine
+from sqlmodel import SQLModel, create_engine, Session
 from app.core.config import settings
 
 engine = create_engine(
@@ -8,8 +8,5 @@ engine = create_engine(
 
 
 def get_session():
-    session = engine.connect()
-    try:
+    with Session(engine) as session:
         yield session
-    finally:
-        session.close()
