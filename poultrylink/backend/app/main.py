@@ -1,9 +1,15 @@
 from fastapi import FastAPI
+from fastapi.security import HTTPBearer
 from fastapi.middleware.cors import CORSMiddleware
 from app.api.v1 import auth, trust, farmhub, supply_market, market_link, process_link, move
 from app.core.database import SQLModel, engine
 
-app = FastAPI(title="PoultryLink API")
+security = HTTPBearer()
+
+app = FastAPI(
+    title="PoultryLink API",
+    swagger_ui_parameters={"persistAuthorization": True}
+)
 
 # CORS configuration
 app.add_middleware(
